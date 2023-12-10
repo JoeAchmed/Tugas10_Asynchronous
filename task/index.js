@@ -2,7 +2,8 @@
  * Fungsi untuk menampilkan hasil download
  * @param {string} result - Nama file yang didownload
  */
-function showDownload(result) {
+const showDownload = async () => {
+  const result = await download();
   console.log("Download selesai");
   console.log("Hasil Download: " + result);
 }
@@ -11,14 +12,16 @@ function showDownload(result) {
  * Fungsi untuk download file
  * @param {function} callback - Function callback show
  */
-function download(callShowDownload) {
-  setTimeout(function () {
-    const result = "windows-10.exe";
-    callShowDownload(result);
-  }, 3000);
+const download = () => {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      const result = "windows-10.exe";
+      resolve(result);
+    }, 3000);
+  })
 }
 
-download(showDownload);
+showDownload();
 
 /**
  * TODO:
