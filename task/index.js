@@ -5,7 +5,7 @@
 const showDownload = async () => {
   const result = await download();
   console.log("Download selesai");
-  console.log("Hasil Download: " + result);
+  console.log(`Hasil Download: ${result}`);
 }
 
 /**
